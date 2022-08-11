@@ -1,0 +1,64 @@
+.container{
+    margin-bottom: 30px;
+}
+
+.input-box {
+    padding: 20px;
+    border: 1px solid #aaaaaa;
+    background-color: white;
+    font-weight: bold;
+}
+
+.logo-tvri {
+    width: 400px;
+    height: 220px;
+}
+
+.img-box{
+    background-image: url('../img/bg-1.png');
+    background-size: cover;
+}
+
+h1 {
+    font-size: 70px;
+    color: white;
+}
+
+.login-box{
+    background-color: white;
+    padding: 20px;
+    margin: auto;
+    margin-top: 18%;
+    border-radius: 3px;
+}
+
+.img-login {
+    width: 30%;
+    height: 20%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    height: 150px;
+}
+
+.close {
+    background: transparent;
+    border: none;
+    font-size: 25px;    
+}
+
+@media (max-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .login-box{
+        margin-top: 50%;
+    }
+}
