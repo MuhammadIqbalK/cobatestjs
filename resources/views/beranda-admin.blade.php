@@ -33,9 +33,9 @@
         
             <div class="col-md-3 text-end">
                 <div class="dropdown">
-                    <a href="login.html">
+                    <a href="/logout">
                         <button class="btn btn-primary" type="button">
-                            Login
+                            Logout
                         </button>
                     </a>
                 </div>
@@ -276,7 +276,7 @@
 //function auto reload table
             setInterval( function () {
     table.ajax.reload();
-}, 30000 );
+}, 3000 );
     });
 
 

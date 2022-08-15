@@ -29,7 +29,13 @@ class dataperusahaanController extends Controller
             ->make(true);
 
         }
-        return view('/');
+        if (auth()->user()->role == 'admin') {
+            return view('beranda-admin');
+        }else  {
+            return view('/');
+        }
+        // return view('/');
+        
     }
 
     /**

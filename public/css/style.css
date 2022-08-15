@@ -15,7 +15,7 @@
 }
 
 .img-box{
-    background-image: url('../img/bg-1.png');
+    background-image: url(/img/bg-1.png);
     background-size: cover;
 }
 
@@ -24,15 +24,30 @@ h1 {
     color: white;
 }
 
-.login-box{
+.card-box{
     background-color: white;
     padding: 20px;
     margin: auto;
-    margin-top: 18%;
+    margin-top: 12%;
+    border-radius: 3px;
+}
+
+.reset-box{
+    background-color: white;
+    padding: 20px;
+    margin: auto;
+    margin-top: 17%;
     border-radius: 3px;
 }
 
 .img-login {
+    width: 30%;
+    height: 20%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.img-reset-email {
     width: 30%;
     height: 20%;
     margin-top: 10px;
@@ -49,6 +64,8 @@ textarea {
     font-size: 25px;    
 }
 
+
+
 @media (max-width: 768px) {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
@@ -56,9 +73,15 @@ textarea {
 
     h1 {
         font-size: 35px;
+        margin-bottom: 20px;
     }
 
     .login-box{
+        width: 90%;
         margin-top: 50%;
     }
+}
+
+.dataTables_wrapper .dataTables_processing {
+    visibility: hidden;
 }
