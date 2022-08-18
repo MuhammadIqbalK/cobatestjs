@@ -21,16 +21,17 @@ use App\Http\Controllers\ResetPasswordController;
 
     // Route::get('/', function () {
     // return view('testindex');});
-
- Route::resource('dataperusahaan', '\App\Http\Controllers\dataperusahaanController');
-
-     // Route::get('/', 'App\Http\Controllers\dataperusahaanController@index');
+    // Route::get('/', 'App\Http\Controllers\dataperusahaanController@index');
 
 
      Route::get('/', function () {
         return view('beranda');
     });
+//route tabel data perusahaan
+    Route::resource('dataperusahaan', '\App\Http\Controllers\dataperusahaanController');
     
+
+ //route login dan daftar   
     Route::get('/login', function () {
         return view('login');
     })->name('login');

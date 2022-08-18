@@ -23,7 +23,7 @@
                 <li><a href="#" class="nav-link px-2 link-dark">Karir</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Kontak</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Tentang Kami</a></li>
-            </ul>
+                <li><a href="/login" class="nav-link px-2 link-dark">Peminjaman barang</a></li>
         
             <div class="col-md-3 text-end">
                 <div class="dropdown">
@@ -46,24 +46,7 @@
                     <div class="col-md-6">
                         <h1>Data Kerjasama Perusahaan</h1>
                     </div>
-                    <div class="col-md-6 rounded-3 input-box">
-                        <form>
-                            <div class="mb-3">
-                                <label for="nama" class="form-label">Nama Perusahaan</label>
-                                <input type="text" class="form-control" id="nama">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email Perusahaan</label>
-                                <input type="text" class="form-control" id="email" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="keterangan" class="form-label">Keterangan</label>
-                                <textarea type="textarea" class="form-control" id="keterangan"></textarea>
-                            </div>
-                            <button type="cancel" class="btn btn-outline-danger">Cancel</button>
-                            <button type="submit" class="btn btn-success">Submit</button>
-                        </form>
-                    </div>
+                  
                 </div>
             </div>
         </div>

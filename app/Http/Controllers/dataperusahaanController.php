@@ -31,7 +31,11 @@ class dataperusahaanController extends Controller
         }
         if (auth()->user()->role == 'admin') {
             return view('beranda-admin');
-        }else  {
+
+        }else if (auth()->user()->role == 'user') {
+                return view('beranda-user');
+            }
+        else  {
             return view('/');
         }
         // return view('/');

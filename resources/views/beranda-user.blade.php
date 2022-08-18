@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Beranda-user</title>
+    <title>pkl</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
@@ -22,6 +23,7 @@
                 <li><a href="#" class="nav-link px-2 link-dark">Karir</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Kontak</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Tentang Kami</a></li>
+                <li><a href="" class="nav-link px-2 link-dark">Peminjaman barang</a></li>
             </ul>
         
             <div class="col-md-3 text-end">
@@ -45,31 +47,14 @@
                     <div class="col-md-6">
                         <h1>Data Kerjasama Perusahaan</h1>
                     </div>
-                    <div class="col-md-6 rounded-3 input-box">
-                        <form>
-                            <div class="mb-3">
-                                <label for="nama" class="form-label">Nama Perusahaan</label>
-                                <input type="text" class="form-control" id="nama">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email Perusahaan</label>
-                                <input type="text" class="form-control" id="email" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="keterangan" class="form-label">Keterangan</label>
-                                <textarea type="textarea" class="form-control" id="keterangan"></textarea>
-                            </div>
-                            <button type="cancel" class="btn btn-outline-danger">Cancel</button>
-                            <button type="submit" class="btn btn-success">Submit</button>
-                        </form>
-                    </div>
+                  
                 </div>
             </div>
         </div>
     </div> 
     
     <div class="container">
-        <table id="example" class="table table-striped" style="width:100%">
+        <table id="tabelpt" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
                     <th>Nama Perusahaan</th>
@@ -77,53 +62,7 @@
                     <th>Keterangan</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Sukamaju</td>
-                    <td>sukamaju@gmail.com</td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores provident cumque qui illum debitis tempora illo deleniti minima. Eius cupiditate assumenda necessitatibus vitae fuga commodi sunt cum alias eveniet rem.</td>
-                </tr>
-                <tr>
-                    <td>Berjaya</td>
-                    <td>berjayaaaa@gmail.com</td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel facilis sunt alias doloremque nemo praesentium odit pariatur fuga dolorum illo aliquam vitae, vero saepe inventore magni nam esse, blanditiis repellendus.</td>
-                </tr>
-                <tr>
-                    <td>abccc</td>
-                    <td>abc123@gmail.com</td>
-                    <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium voluptates, incidunt suscipit voluptatem illum ullam fugiat cupiditate repellat. Labore, ullam vero cum placeat sed harum a deserunt quidem quo accusantium!</td>
-                </tr>
-                <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                </tr>
-                <tr>
-                    <td>Airi Satou</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                </tr>
-                <tr>
-                    <td>Brielle Williamson</td>
-                    <td>Integration Specialist</td>
-                    <td>New York</td>
-                </tr>
-                <tr>
-                    <td>Herrod Chandler</td>
-                    <td>Sales Assistant</td>
-                    <td>San Francisco</td>
-                </tr>
-                <tr>
-                    <td>Rhona Davidson</td>
-                    <td>Integration Specialist</td>
-                    <td>Tokyo</td>
-                </tr>
-                <tr>
-                    <td>Colleen Hurst</td>
-                    <td>Javascript Developer</td>
-                    <td>San Francisco</td>
-                </tr>
-            </tbody>
+           
         </table>
     </div>
 
@@ -143,6 +82,83 @@
             ]
         } );
     </script>
+
+<!-- SCRIPT AJAX -->
+
+   
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+              $.ajaxSetup({
+                  headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  }
+              });
+          });
+  
+  
+  
+      $(document).ready(function() {
+  
+         var table = $('#tabelpt').DataTable({
+              "pageLength": 50,
+             processing : true,
+             serverSide : true,
+             ajax: {
+  
+              url: "{{route('dataperusahaan.index')}}",
+              type: 'GET',
+              
+               },
+               columns: [{
+                          data:'nama_perusahaan',
+                          name:'nama_perusahaan'
+                      },
+                      
+                      {
+                          data:'email',
+                          name:'email'
+                      },
+                      {
+                          data:'keterangan',
+                          name:'keterangan'
+                      },
+  
+                       
+                    
+                  ],
+  
+                  order:[
+                  [0,'desc']
+                  ]
+  
+  
+              });
+  //function auto reload table
+              setInterval( function () {
+      table.ajax.reload();
+  }, 3000 );
+      });
+  
+  
+  
+  
+  
+  
+  </script>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 

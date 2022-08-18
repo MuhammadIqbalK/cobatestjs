@@ -29,6 +29,7 @@
                 <li><a href="#" class="nav-link px-2 link-dark">Karir</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Kontak</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Tentang Kami</a></li>
+                <li><a href="" class="nav-link px-2 link-dark">Peminjaman barang</a></li>
             </ul>
         
             <div class="col-md-3 text-end">
@@ -52,29 +53,7 @@
                     <div class="col-md-6">
                         <h1>Data Kerjasama Perusahaan</h1>
                     </div>
-                      <!--    <div class="col-md-6 rounded-3 input-box">
-
-
-                        <form id="form-tambah-edit" name="form-tambah-edit">
-
-                             <input type="hidden" name="id" id="id">
-
-                            <div class="mb-3">
-                                <label for="nama" class="form-label">Nama Perusahaan</label>
-                                <input type="text" class="form-control"  name="nama_perusahaan" id="nama_perusahaan" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email Perusahaan</label>
-                                <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelp" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="keterangan" class="form-label">Keterangan</label>
-                                <textarea type="textarea" class="form-control"  name="keterangan"  id="keterangan" aria-required="true"></textarea>
-                            </div>
-                            <button type="button" id="tombol-reset" class="btn btn-outline-danger" onclick="newFunction()" value="Reset">reset</button>
-                            <button type="submit" id="tombol-simpan" class="btn btn-success">Submit</button>
-                        </form>
-                    </div> -->
+                  
                 </div>
             </div>
         </div>
@@ -208,14 +187,14 @@
          }
       </script>
 
-<script>
+{{-- <script>
     setInterval( function () {
         window.location.hash = '#myTable';
     window.location.reload(true);
 }, 30000 );
     
    
-</script>
+</script> --}}
 
 <!-- SCRIPT AJAX -->
 
@@ -273,10 +252,10 @@
 
 
             });
-//function auto reload table
-            setInterval( function () {
-    table.ajax.reload();
-}, 3000 );
+// //function auto reload table
+//             setInterval( function () {
+//     table.ajax.reload();
+// }, 3000 );
     });
 
 
