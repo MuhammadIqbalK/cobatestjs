@@ -54,11 +54,12 @@ class peminjamanController extends Controller
      */
     public function store(Request $request)
     {
-        $id = $request->id_barang;
+        $id = $request->kode_peminjaman;
         
         $post   =   Peminjaman::updateOrCreate(['kode_peminjaman' => $id],
                     [   
                         'id_barang' => $request->id_barang,
+                        'id' => $request->id_user,
                         'nama_barang' => $request->nama_barang,
                         'nama_peminjam' => $request->nama_peminjam,
                         'jumlah' => $request->jumlah,

@@ -187,14 +187,14 @@
                             <div class="form-group">
                                 <label for="name" class="col-sm-12 control-label">Id barang</label>
                                 <div class="col-sm-12">
-                                    <input type="text" class="form-control"  id="id_barang" name="id_barang"
+                                    <input readonly type="text" class="form-control"  id="id_barang" name="id_barang"
                                         value="" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="name" class="col-sm-12 control-label">id</label>
+                                    <label for="name" class="col-sm-12 control-label">id user</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control"  id="id_user" name="id_user"
+                                        <input readonly type="text" class="form-control"  id="id_user" name="id_user"
                                             value="" required>
                                     </div>
                             </div> 
@@ -202,7 +202,7 @@
                                 <div class="form-group">
                                     <label for="name" class="col-sm-12 control-label">Nama Barang</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control"  id="nama_barang" name="nama_barang"
+                                        <input readonly type="text" class="form-control"  id="nama_barang" name="nama_barang"
                                             value="" required>
                                     </div>
                             </div> 
@@ -616,23 +616,23 @@ $('body').on('click', '.pinjam-post', function () {
             })
         });
 
-if ($("#form-tambah-editbr").length > 0) {
-            $("#form-tambah-editbr").validate({
+if ($("#form-tambah-editpnj").length > 0) {
+            $("#form-tambah-editpnj").validate({
                 submitHandler: function (form) {
-                    var actionType = $('#tombol-simpanbr').val();
+                    var actionType = $('#tombol-simpanpnj').val();
                    
-                     $('#tombol-simpanbr').html('Sending..');
+                     $('#tombol-simpanpnj').html('Sending..');
                     $.ajax({
-                        data: $('#form-tambah-editbr')
+                        data: $('#form-tambah-editpnj')
                             .serialize(), //function yang dipakai agar value pada form-control seperti input, textarea, select dll dapat digunakan pada URL query string ketika melakukan ajax request
-                        url: "{{ route('databarang.store') }}", //url simpan data
+                        url: "{{ route('peminjaman.store') }}", //url simpan data
                         type: "POST", //karena simpan kita pakai method POST
                         dataType: 'json', //data tipe yang dikirim berupa JSON
                         success: function (data) { //jika berhasil 
-                            $('#form-tambah-editbr').trigger("reset"); //form reset
-                            $('#edit-modalbr').modal('hide');
-                            $('#tombol-simpanbr').html('Simpan'); //tombol simpan
-                            var oTable = $('#tabelbr').dataTable(); //inialisasi datatable
+                            $('#form-tambah-editpnj').trigger("reset"); //form reset
+                            $('#edit-modalpnj').modal('hide');
+                            $('#tombol-simpanpnj').html('Simpan'); //tombol simpan
+                            var oTable = $('#tabelpnj').dataTable(); //inialisasi datatable
                             oTable.fnDraw(false); //reset datatable
                             iziToast.success({ //tampilkan iziToast dengan notif data berhasil disimpan pada posisi kiri atas
                                 title: 'Data Berhasil Disimpan',
@@ -642,7 +642,7 @@ if ($("#form-tambah-editbr").length > 0) {
                         },
                         error: function (data) { //jika error tampilkan error pada console
                             console.log('Error:', data);
-                            $('#tombol-simpanbr').html('Simpan');
+                            $('#tombol-simpanpnj').html('Simpan');
                         }
                     });
                     return false;
