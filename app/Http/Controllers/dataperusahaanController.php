@@ -91,7 +91,7 @@ class dataperusahaanController extends Controller
      */
     public function edit($id)
     {
-         $where = array('id' => $id);
+        $where = array('id' => $id);
         $post  = Data_perusahaan::where($where)->first();
      
         return response()->json($post);

@@ -17,18 +17,39 @@
 .img-box{
     background-image: url(/img/bg-1.png);
     background-size: cover;
+    height: 700px;
+    
 }
 
-h1 {
-    font-size: 70px;
+.judul h1 {
+    font-size: 80px;
     color: white;
+}
+
+.judul h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-weight:100;
+}
+
+.judul button {
+    font-size: 20px;
+    width: 200px;
+}
+
+.login-box{
+    background-color: white;
+    padding: 20px;
+    margin: auto;
+    margin-top: 15%;
+    border-radius: 3px;
 }
 
 .card-box{
     background-color: white;
     padding: 20px;
     margin: auto;
-    margin-top: 12%;
+    margin-top: 21%;
     border-radius: 3px;
 }
 
@@ -64,15 +85,61 @@ textarea {
     font-size: 25px;    
 }
 
+.title-data-perusahaan {
+    text-align: center;
+}
 
+#footer {
+    padding: 0 0 30px 0;
+    font-size: 14px;
+    background: #fff;
+}
+
+#footer .footer-top {
+    padding: 60px 0 30px 0;
+    background: #f5f8fd;
+}
+
+#footer .footer-top h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+#footer .footer-top p {
+    font-family: "Poppins", sans-serif;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+    color: #696592;
+    text-decoration: none;
+}
+
+#footer .footer-top .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer .footer-top .footer-links {
+    margin-bottom: 30px;
+}
+
+strong {
+    font-weight: bolder;
+}
 
 @media (max-width: 768px) {
+
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
     }
 
-    h1 {
-        font-size: 35px;
+    .judul h1 {
+        font-size: 60px;
         margin-bottom: 20px;
     }
 

@@ -27,9 +27,19 @@ use App\Http\Controllers\ResetPasswordController;
      Route::get('/', function () {
         return view('beranda');
     });
+
+    Route::get('peminjamanview', function () {
+        return view('beranda-admin-inventaris');
+    });
+
 //route tabel data perusahaan
     Route::resource('dataperusahaan', '\App\Http\Controllers\dataperusahaanController');
-    
+
+//route tabel data invetaris barang
+    Route::resource('databarang', '\App\Http\Controllers\databarangController');
+
+//route tabel data Peminjaman
+    Route::resource('peminjaman', '\App\Http\Controllers\peminjamanController');
 
  //route login dan daftar   
     Route::get('/login', function () {
