@@ -23,7 +23,7 @@
                 <li><a href="#" class="nav-link px-2 link-dark">Karir</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Kontak</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Tentang Kami</a></li>
-                <li><a href="/peminjaman" class="nav-link px-2 link-dark">Peminjaman barang</a></li>
+                <li><a href="/peminjamanuser" class="nav-link px-2 link-dark">Peminjaman barang</a></li>
             </ul>
         
             <div class="col-md-3 text-end">
@@ -57,6 +57,7 @@
         <table id="tabelpt" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
+                    <th>No</th>
                     <th>Nama Perusahaan</th>
                     <th>Email Perusahaan</th>
                     <th>Keterangan</th>
@@ -174,7 +175,14 @@
               type: 'GET',
               
                },
-               columns: [{
+               columns: [
+
+                       {
+                         data: 'DT_RowIndex',
+                         name: 'DT_RowIndex'
+                       },
+                      
+                      {
                           data:'nama_perusahaan',
                           name:'nama_perusahaan'
                       },

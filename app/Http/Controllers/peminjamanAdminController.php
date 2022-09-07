@@ -1,34 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Peminjaman;
-use App\Models\Data_barang;
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class peminjamanController extends Controller
+class peminjamanAdminController extends Controller
 {
-    /**
+      /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {   $condition = auth()->user()->id;
-        $listdatapnj = Peminjaman::where('id',$condition);
+    {
+        $listdatapnj = Peminjaman::all();
         if($request->ajax()){
             return datatables()->of($listdatapnj)
              ->addColumn('action', function($data){
-                        $button = '';
-                        if($data->status == 'Menunggu verifikasi'){
-                        $button .= '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$data->kode_peminjaman.'" data-original-title="Editrwt" class="edit btn btn-info btn-sm editrwt-post"><i class="far fa-edit"></i>Batalkan</a>';
-                        }
-                        if($data->status == 'Dibatalkan oleh User' || $data->status == 'Dikembalikan oleh peminjam'|| $data->status == 'Dibatalkan oleh admin'){
-                        $button .= '<button type="button" name="delete" id="'.$data->kode_peminjaman.'" class="delete btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Hapus</button>';  
-                        }
-                        //     $button .= '&nbsp;&nbsp;';
-                    
+                            $button = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$data->kode_peminjaman.'" data-original-title="Editrwt" class="edit btn btn-info btn-sm editrwt-post"><i class="far fa-edit"></i> Ubah Status</a>';
+                            $button .= '&nbsp;&nbsp;';
+                            $button .= '<button type="button" name="delete" id="'.$data->kode_peminjaman.'" class="delete btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Delete</button>';  
+                            $button .= '&nbsp;&nbsp;';
                            
                             return $button;
                         })
@@ -38,8 +30,7 @@ class peminjamanController extends Controller
             ->make(true);
 
         }
-        
-        return view('beranda-user-riwayat');   
+        return view('beranda-admin-riwayat');   
     }
 
     /**
@@ -70,7 +61,7 @@ class peminjamanController extends Controller
                         'nama_barang' => $request->nama_barang,
                         'nama_peminjam' => $request->nama_peminjam,
                         'jumlah' => $request->jumlah,
-                       // 'status' =>$request->status,
+                        'status' =>$request->status,
                         'tanggal_kembali' => $request->tanggal_kembali,
                     ]); 
 

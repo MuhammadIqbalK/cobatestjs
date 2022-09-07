@@ -63,38 +63,35 @@
     </div> 
 
     <nav class="breadcrumbs">
-        <a href="" class="breadcrumbs__item">BARANG</a>
-        <a href="/riwayatviewadmin" class="breadcrumbs__item">RIWAYAT</a> 
+        <a href="/peminjamanuser" class="breadcrumbs__item">BARANG</a>
+        <a href="#" class="breadcrumbs__item">RIWAYAT</a> 
       </nav>
 
 
     <div class="container my-5 title-data-perusahaan" id="data_inventaris_barang">
-        <h1 id="data-barang">DATA INVENTARIS BARANG</h1>
+        <h1 id="data-barang">RIWAYAT PEMINJAMAN</h1>
     </div>
 
     <div class="container" style="margin-bottom: 100px;" >
-        <table id="tabelbr" class="table table-striped" style="width:100%">
+        <table id="tabelpnj" class="table table-striped" style="width:100%">
             <thead>
-                <button id="tombol-tambahbr" class="btn btn-primary" type="button">
-                    Tambah Barang
-                </button>
+                
                 <tr>
-                    <th>No</th>
-                    <th>Nama barang</th>
-                    <th>jumlah</th>
-                    <th>Deskripsi</th>
-                    <th>Tanggal diinput</th>
-                    <th>Tanggal diperbarui</th>
+                    <th>Kode peminjaman</th>
+                    <th>Id barang</th>
+                    <th>Nama Barang</th>
+                    <th>Nama Peminjam</th>
+                    <th>Jumlah</th>
+                    <th>Tanggal Pinjam</th>
+                    <th>Tanggal Kembali</th>
+                    <th>Status</th>
                     <th>Aksi</th>
-                    
                      
                 </tr>
             </thead>
            
         </table>
     </div>
-
-   
 
     <footer id="footer" class="section-bg">
         <div class="footer-top">
@@ -157,87 +154,34 @@
 
 
  
-
  
  
-
- 
- 
-        
-    <!-- MODAL DELETE barang -->
-    <div class="modal fade" id="modalDeletebr" tabindex="-2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-danger">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            <div class="modal-body">
-                 <p><b>Jika menghapus Data ini maka</b></p>
-                    <p>*data tersebut hilang selamanya, apakah anda yakin?</p>
+<main>
+<!-- MODAL DELETE barang -->
+<div class="modal fade" id="modalDeleterwt" tabindex="-2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    <button type="button" name="tombol-hapusbr" id="tombol-hapusbr" class="btn btn-primary">Hapus</button>
-                </div>
+        <div class="modal-body">
+             <p><b>Jika menghapus Data ini maka</b></p>
+                <p>*data tersebut hilang selamanya, apakah anda yakin?</p>
+        </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="button" name="tombol-hapusrwt" id="tombol-hapusrwt" class="btn btn-primary">Hapus</button>
             </div>
         </div>
     </div>
-    <!--  -->
-    
-    
-     <!-- MODAL EDIT tambah barang -->
-     <div class="modal fade" id="edit-modalbr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-info">
-                    <h5 class="modal-title" id="modal-judul">Edit Data</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="form-tambah-editbr" name="form-tambah-editbr" >
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <input type="hidden" name="id_barang" id="id_barang">
-                                <div class="form-group">
-                                    <label for="name" class="col-sm-12 control-label">Nama Barang</label>
-                                    <div class="col-sm-12">
-                                        <input type="text" class="form-control"  id="nama_barang" name="nama_barang"
-                                            value="" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name" class="col-sm-12 control-label">Jumlah</label>
-                                    <div class="col-sm-12">
-                                        <input type="number" class="form-control"  id="jumlah" name="jumlah" value=""
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name" class="col-sm-12 control-label">Deskripsi</label>
-                                    <div class="col-sm-12">
-                                        <textarea class="form-control"  name="Deskripsi" id="Deskripsi" required></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">tutup</button>
-                            <button type="submit" id="tombol-simpanbr" class="btn btn-primary">Simpan</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--  -->
-    
-    
-<!-- MODAL tambah peminjaman-->
-<div class="modal fade" id="edit-modalpnj" tabindex="-3" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</div>
+<!--  -->
+
+  <!-- MODAL EDIT RIWAYAt -->
+<div class="modal fade" id="edit-modalrwt" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-info">
@@ -250,24 +194,12 @@
                 <form id="form-tambah-editpnj" name="form-tambah-editpnj" >
                     <div class="row">
                         <div class="col-sm-12">
-                            
                             <input type="hidden" name="kode_peminjaman" id="kode_peminjaman">
-                            
+                            <input type="hidden" name="id_barang" id="id_barang">
+                            <input type="hidden" name="id_user" id="id_user">
+                            <input type="hidden" name="tanggal_kembali" id="tanggal_kembali">
                             <div class="form-group">
-                                <label for="name" class="col-sm-12 control-label">Id barang</label>
-                                <div class="col-sm-12">
-                                    <input readonly type="text" class="form-control"  id="id_barang" name="id_barang"
-                                        value="" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="name" class="col-sm-12 control-label">id user</label>
-                                    <div class="col-sm-12">
-                                        <input readonly type="text" class="form-control"  id="id_user" name="id_user"
-                                            value="" required>
-                                    </div>
-                            </div> 
-
+                              
                                 <div class="form-group">
                                     <label for="name" class="col-sm-12 control-label">Nama Barang</label>
                                     <div class="col-sm-12">
@@ -276,38 +208,52 @@
                                     </div>
                             </div> 
 
-                                <div class="form-group">
-                                    <label for="name" class="col-sm-12 control-label">Nama Peminjam</label>
-                                    <div class="col-sm-12">
-                                        <input type="text" class="form-control"  id="nama_peminjam" name="nama_peminjam"
-                                            value="" required>
-                                    </div>
-                            </div>
                             <div class="form-group">
-                                <label for="name" class="col-sm-12 control-label">Jumlah</label>
+                                <label for="name" class="col-sm-12 control-label">Nama Peminjam</label>
                                 <div class="col-sm-12">
-                                    <input type="number" class="form-control"  id="jumlah" name="jumlah" value=""
-                                        required>
+                                    <input readonly type="text" class="form-control"  id="nama_peminjam" name="nama_peminjam"
+                                        value="" required>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-12 control-label">Tanggal Kembali</label>
-                                <div class="col-sm-12">
-                                    <input type="date" class="form-control"  name="tanggal_kembali" id="tanggal_kembali" value=""
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-12 control-label">Jumlah</label>
+                            <div class="col-sm-12">
+                                <input readonly type="number" class="form-control"  id="jumlah" name="jumlah" value=""
                                     required>
-                                </div>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label for="name" class="col-sm-12 control-label">Status</label>
+                            <div class="col-sm-12">
+                                <input readonly type="text" class="form-control"  id="status" name="status" value="Dibatalkan oleh User"
+                                    required>
+                            </div>
+                        </div>
+
+                                {{-- <label for="status" class="col-sm-12 control-label">edit status</label>
+                                <div class="col-sm-12">
+                                    <select name="status" id="status"  value="Dibatalkan oleh User" class="form-control required">
+                                        <option selected value="Dibatalkan oleh User">Dibatalkan</option>                                     
+                                    </select>
+                                </div> --}}
+                           
+                          
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">tutup</button>
-                        <button type="submit" id="tombol-simpanpnj" class="btn btn-primary">Simpan</button>
+                        <button type="submit" id="tombol-simpanrwt" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-<!--  --> 
+<!--  -->
+        
+  
+    
+    </main>
+
  
 
 
@@ -374,102 +320,117 @@
           });
   
   
+  //script tabel riwayat peminjaman
+
+$(document).ready(function() {
   
-      $(document).ready(function() {
-  
-         var table = $('#tabelbr').DataTable({
-              "pageLength": 50,
-             processing : true,
-             serverSide : true,
-             ajax: {
-  
-              url: "{{route('databarang.index')}}",
-              type: 'GET',
-              
+  var table = $('#tabelpnj').DataTable({
+       "pageLength": 50,
+      processing : true,
+      serverSide : true,
+      ajax: {
+
+       url: "{{route('peminjaman.index')}}",
+       type: 'GET',
+       
+        },
+        columns: [{
+                   data:'kode_peminjaman',
+                   name:'kode_peminjaman'
                },
-               columns: [
+               
+               {
+                   data:'id_barang',
+                   name:'id_barang'
+               },
+               {
+                   data:'nama_barang',
+                   name:'nama_barang'
+               },
 
-                       {
-                         data: 'DT_RowIndex',
-                         name: 'DT_RowIndex'
-                       },
+               {
+                   data: 'nama_peminjam',
+                   name: 'nama_peminjam'
+               },
 
-                      {
-                          data:'nama_barang',
-                          name:'nama_barang'
-                      },
-                      
-                      {
-                          data:'jumlah',
-                          name:'jumlah'
-                      },
-                      {
-                          data:'Deskripsi',
-                          name:'Deskripsi'
-                      },
+               {
+                   data: 'jumlah',
+                   name: 'jumlah'
+               },
 
-                      {
-                          data: 'created_at',
-                          name: 'created_at'
-                      },
+               {
+                   data: 'created_at',
+                   name: 'created_at'
+               },
 
-                      {
-                          data: 'updated_at',
-                          name: 'updated_at'
-                      },
-  
-                       {
-                          data: 'action',
-                          name: 'action'
-                      },
+               {
+                   data: 'tanggal_kembali',
+                   name: 'tanggal_kembali'
+               },
 
-                     
-                    
-                  ],
-  
-                  order:[
-                  [0,'desc']
-                  ]
-  
-  
-              });
-  // //function auto reload table
-  //             setInterval( function () {
-  //     table.ajax.reload();
-  // }, 3000 );
-      });
+               {
+                   data: 'status',
+                   name: 'status'
+               },
 
-// Script Create-edit
+                {
+                   data: 'action',
+                   name: 'action'
+               },
+             
+           ],
 
-//script tombol-modal-create
-$('#tombol-tambahbr').click(function () {
-            $('#button-simpanbr').val("create-post"); //valuenya menjadi create-post
-            $('#id_barang').val(''); //valuenya menjadi kosong
-            $('#form-tambah-editbr').trigger("reset"); //mereset semua input dll didalamnya
-            $('#modal-judul').html("Tambah data Baru"); //valuenya tambah pegawai baru
-            $('#edit-modalbr').modal('show'); //modal tampil
+           order:[
+           [0,'desc']
+           ]
+
+
+       });
+// //function auto reload table
+//             setInterval( function () {
+//     table.ajax.reload();
+// }, 3000 );
+});
+
+  //script tombol-modal-edit
+  $('body').on('click', '.editrwt-post', function () {
+            var data_id = $(this).data('id');
+            $.get('peminjamanAdmin/' + data_id + '/edit', function (data) {
+                $('#modal-judul').html("ubah status");
+                $('#tombol-simpanrwt').val("create-post");
+                $('#edit-modalrwt').modal('show');
+                //set value masing-masing id berdasarkan data yg diperoleh dari ajax get request diatas               
+                $('#kode_peminjaman').val(data.kode_peminjaman);
+                $('#id_barang').val(data.id_barang);
+                $('#id_user').val(data.id);
+                $('#nama_barang').val(data.nama_barang);
+                $('#nama_peminjam').val(data.nama_peminjam);
+                $('#jumlah').val(data.jumlah);
+                //$('#status').val(data.status);
+                $('#tanggal_kembali').val(data.tanggal_kembali);
+                
+            })
         });
 
 
 
-
- if ($("#form-tambah-editbr").length > 0) {
-            $("#form-tambah-editbr").validate({
+if ($("#form-tambah-editpnj").length > 0) {
+            $("#form-tambah-editpnj").validate({
                 submitHandler: function (form) {
-                    var actionType = $('#tombol-simpanbr').val();
+                    var actionType = $('#tombol-simpanrwt').val();
                    
-                     $('#tombol-simpanbr').html('Sending..');
+                     $('#tombol-simpanrwt').html('Sending..');
                     $.ajax({
-                        data: $('#form-tambah-editbr')
+                        data: $('#form-tambah-editpnj')
                             .serialize(), //function yang dipakai agar value pada form-control seperti input, textarea, select dll dapat digunakan pada URL query string ketika melakukan ajax request
-                        url: "{{ route('databarang.store') }}", //url simpan data
+                        url: "{{ route('peminjamanAdmin.store') }}", //url simpan data
                         type: "POST", //karena simpan kita pakai method POST
                         dataType: 'json', //data tipe yang dikirim berupa JSON
                         success: function (data) { //jika berhasil 
-                            $('#form-tambah-editbr').trigger("reset"); //form reset
-                            $('#edit-modalbr').modal('hide');
-                            $('#tombol-simpanbr').html('Simpan'); //tombol simpan
-                            var oTable = $('#tabelbr').dataTable(); //inialisasi datatable
+                            $('#form-tambah-editpnj').trigger("reset"); //form reset
+                            $('#edit-modalrwt').modal('hide');
+                            $('#tombol-simpanrwt').html('Simpan'); //tombol simpan
+                            var oTable = $('#tabelpnj').dataTable(); //inialisasi datatable
                             oTable.fnDraw(false); //reset datatable
                             iziToast.success({ //tampilkan iziToast dengan notif data berhasil disimpan pada posisi kiri atas
                                 title: 'Data Berhasil Disimpan',
@@ -479,7 +440,7 @@ $('#tombol-tambahbr').click(function () {
                         },
                         error: function (data) { //jika error tampilkan error pada console
                             console.log('Error:', data);
-                            $('#tombol-simpanbr').html('Simpan');
+                            $('#tombol-simpanrwt').html('Simpan');
                         }
                     });
                     return false;
@@ -487,46 +448,26 @@ $('#tombol-tambahbr').click(function () {
             })
         }
 
-//script tombol-modal-edit
-$('body').on('click', '.edit-post', function () {
-            var data_id = $(this).data('id');
-            $.get('databarang/' + data_id + '/edit', function (data) {
-                $('#modal-judul').html("Edit barang");
-                $('#tombol-simpabr').val("edit-post");
-                $('#edit-modalbr').modal('show');
-                //set value masing-masing id berdasarkan data yg diperoleh dari ajax get request diatas               
-                $('#id_barang').val(data.id_barang);
-                $('#nama_barang').val(data.nama_barang);
-                $('#jumlah').val(data.jumlah);
-                $('#Deskripsi').val(data.Deskripsi);
-            })
-        });
-
-
-
-
-
-
 //Script delete
 
 //jika klik class delete (yang ada pada tombol delete) maka tampilkan modal konfirmasi hapus maka
 $(document).on('click', '.delete', function () {
             dataId = $(this).attr('id');
-            $('#modalDeletebr').modal('show');
+            $('#modalDeleterwt').modal('show');
         });
         //jika tombol hapus pada modal konfirmasi di klik maka
-        $('#tombol-hapusbr').click(function () {
+        $('#tombol-hapusrwt').click(function () {
             $.ajax({
 
-                url: "databarang/" + dataId, //eksekusi ajax ke url ini
+                url: "peminjamanAdmin/" + dataId, //eksekusi ajax ke url ini
                 type: 'delete',
                 beforeSend: function () {
-                    $('#tombol-hapusbr').text('Hapus Data'); //set text untuk tombol hapus
+                    $('#tombol-hapusrwt').text('Hapus Data'); //set text untuk tombol hapus
                 },
                 success: function (data) { //jika sukses
                     setTimeout(function () {
-                        $('#modalDeletebr').modal('hide'); //sembunyikan konfirmasi modal
-                        var oTable = $('#tabelbr').dataTable();
+                        $('#modalDeleterwt').modal('hide'); //sembunyikan konfirmasi modal
+                        var oTable = $('#tabelpnj').dataTable();
                         oTable.fnDraw(false); //reset datatable
                     });
                     iziToast.warning({ //tampilkan izitoast warning
@@ -538,12 +479,6 @@ $(document).on('click', '.delete', function () {
                 }
             })
         });
-
-
-
-
-
-
 
 
 

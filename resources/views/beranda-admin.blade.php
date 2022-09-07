@@ -67,6 +67,7 @@
                     Tambah Data
                 </button>        
                 <tr>
+                    <th>No</th>
                     <th>Nama Perusahaan</th>
                     <th>Email Perusahaan</th>
                     <th>Keterangan</th>
@@ -280,7 +281,15 @@
             type: 'GET',
             
              },
-             columns: [{
+             columns: [
+                
+                    {
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex'
+                    },
+
+
+                    {
                         data:'nama_perusahaan',
                         name:'nama_perusahaan'
                     },

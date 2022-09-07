@@ -39,11 +39,18 @@ class databarangController extends Controller
             ->make(true);
 
         }
-        return view('beranda-admin-inventaris');
 
+        if (auth()->user()->role == 'admin') {
+            return view('beranda-admin-inventaris');
 
-
-        
+        }else if (auth()->user()->role == 'user') {
+                return view('beranda-user-inventaris');
+            }
+        else  {
+            return view('/');
+        }
+        //return view('beranda-admin-inventaris');
+  
     }
 
     /**

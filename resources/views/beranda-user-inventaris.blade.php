@@ -50,7 +50,7 @@
             <div class="container-fluid py-5">
                 <div class="row">
                     <div class="col-md-7 judul">
-                        <h1>Data Inventaris Barang</h1>
+                        <h1>Data Inventaris Barang  </h1>
                         <h3>Menampilkan informasi tentang barang yang tersedia untuk dilakukan peminjaman</h3>
                         <a href="#data-barang">
                             <button type="submit" class="btn btn-success">Mulai layanan</button>
@@ -64,7 +64,7 @@
 
     <nav class="breadcrumbs">
         <a href="" class="breadcrumbs__item">BARANG</a>
-        <a href="/riwayatviewadmin" class="breadcrumbs__item">RIWAYAT</a> 
+        <a href="/riwayatviewuser" class="breadcrumbs__item">RIWAYAT</a> 
       </nav>
 
 
@@ -75,9 +75,7 @@
     <div class="container" style="margin-bottom: 100px;" >
         <table id="tabelbr" class="table table-striped" style="width:100%">
             <thead>
-                <button id="tombol-tambahbr" class="btn btn-primary" type="button">
-                    Tambah Barang
-                </button>
+               
                 <tr>
                     <th>No</th>
                     <th>Nama barang</th>
@@ -85,8 +83,7 @@
                     <th>Deskripsi</th>
                     <th>Tanggal diinput</th>
                     <th>Tanggal diperbarui</th>
-                    <th>Aksi</th>
-                    
+                    <th>Tombol</th>
                      
                 </tr>
             </thead>
@@ -94,7 +91,7 @@
         </table>
     </div>
 
-   
+    
 
     <footer id="footer" class="section-bg">
         <div class="footer-top">
@@ -154,87 +151,6 @@
     </footer>
 
 
-
-
- 
-
- 
- 
-
- 
- 
-        
-    <!-- MODAL DELETE barang -->
-    <div class="modal fade" id="modalDeletebr" tabindex="-2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-danger">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            <div class="modal-body">
-                 <p><b>Jika menghapus Data ini maka</b></p>
-                    <p>*data tersebut hilang selamanya, apakah anda yakin?</p>
-            </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    <button type="button" name="tombol-hapusbr" id="tombol-hapusbr" class="btn btn-primary">Hapus</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--  -->
-    
-    
-     <!-- MODAL EDIT tambah barang -->
-     <div class="modal fade" id="edit-modalbr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-info">
-                    <h5 class="modal-title" id="modal-judul">Edit Data</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="form-tambah-editbr" name="form-tambah-editbr" >
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <input type="hidden" name="id_barang" id="id_barang">
-                                <div class="form-group">
-                                    <label for="name" class="col-sm-12 control-label">Nama Barang</label>
-                                    <div class="col-sm-12">
-                                        <input type="text" class="form-control"  id="nama_barang" name="nama_barang"
-                                            value="" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name" class="col-sm-12 control-label">Jumlah</label>
-                                    <div class="col-sm-12">
-                                        <input type="number" class="form-control"  id="jumlah" name="jumlah" value=""
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name" class="col-sm-12 control-label">Deskripsi</label>
-                                    <div class="col-sm-12">
-                                        <textarea class="form-control"  name="Deskripsi" id="Deskripsi" required></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">tutup</button>
-                            <button type="submit" id="tombol-simpanbr" class="btn btn-primary">Simpan</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--  -->
-    
     
 <!-- MODAL tambah peminjaman-->
 <div class="modal fade" id="edit-modalpnj" tabindex="-3" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -286,14 +202,14 @@
                             <div class="form-group">
                                 <label for="name" class="col-sm-12 control-label">Jumlah</label>
                                 <div class="col-sm-12">
-                                    <input type="number" class="form-control"  id="jumlah" name="jumlah" value=""
+                                    <input type="number" class="form-control"  id="jumlah" name="jumlah" max="" value=""
                                         required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="name" class="col-sm-12 control-label">Tanggal Kembali</label>
                                 <div class="col-sm-12">
-                                    <input type="date" class="form-control"  name="tanggal_kembali" id="tanggal_kembali" value=""
+                                    <input type="date" class="form-control"  name="tanggal_kembali" id="tanggal_kembali" min="<?php echo date('Y-m-d H:i'); ?>" value=""
                                     required>
                                 </div>
                             </div>
@@ -388,13 +304,13 @@
               
                },
                columns: [
-
-                       {
+                 
+                      {
                          data: 'DT_RowIndex',
                          name: 'DT_RowIndex'
                        },
-
-                      {
+               
+                     {
                           data:'nama_barang',
                           name:'nama_barang'
                       },
@@ -418,12 +334,12 @@
                           name: 'updated_at'
                       },
   
-                       {
-                          data: 'action',
-                          name: 'action'
-                      },
+                    
 
-                     
+                      {
+                          data: 'pinjambtn',
+                          name: 'pinjambtn'
+                      },
                     
                   ],
   
@@ -433,44 +349,59 @@
   
   
               });
-  // //function auto reload table
-  //             setInterval( function () {
-  //     table.ajax.reload();
-  // }, 3000 );
+  //function auto reload table
+              setInterval( function () {
+      table.ajax.reload();
+  }, 10000*5 );
       });
 
 // Script Create-edit
 
-//script tombol-modal-create
-$('#tombol-tambahbr').click(function () {
-            $('#button-simpanbr').val("create-post"); //valuenya menjadi create-post
-            $('#id_barang').val(''); //valuenya menjadi kosong
-            $('#form-tambah-editbr').trigger("reset"); //mereset semua input dll didalamnya
-            $('#modal-judul').html("Tambah data Baru"); //valuenya tambah pegawai baru
-            $('#edit-modalbr').modal('show'); //modal tampil
+
+//script tombol-modal-create peminjaman
+$('body').on('click', '.pinjam-post', function () {
+            var data_id = $(this).data('id');
+            
+            $.get('databarang/' + data_id + '/edit', function (data) {
+                $('#modal-judul').html("pinjam");
+                $('#tombol-simpanpnj').val("edit-post");
+                $('#edit-modalpnj').modal('show');
+                //set value masing-masing id berdasarkan data yg diperoleh dari ajax get request diatas               
+                $('#id_barang').val(data.id_barang);
+                $('#id_user').val({{ auth()->user()->id}});
+                $('#nama_barang').val(data.nama_barang);
+                $("#jumlah").attr("max",data.jumlah);
+                $('#status').val('');
+                
+            })
         });
 
 
 
 
- if ($("#form-tambah-editbr").length > 0) {
-            $("#form-tambah-editbr").validate({
+
+//script tabel tambah peminjaman
+
+
+if ($("#form-tambah-editpnj").length > 0) {
+            $("#form-tambah-editpnj").validate({
                 submitHandler: function (form) {
-                    var actionType = $('#tombol-simpanbr').val();
+                    var actionType = $('#tombol-simpanpnj').val();
                    
-                     $('#tombol-simpanbr').html('Sending..');
+                     $('#tombol-simpanpnj').html('Sending..');
                     $.ajax({
-                        data: $('#form-tambah-editbr')
+                        data: $('#form-tambah-editpnj')
                             .serialize(), //function yang dipakai agar value pada form-control seperti input, textarea, select dll dapat digunakan pada URL query string ketika melakukan ajax request
-                        url: "{{ route('databarang.store') }}", //url simpan data
+                        url: "{{ route('peminjaman.store') }}", //url simpan data
                         type: "POST", //karena simpan kita pakai method POST
                         dataType: 'json', //data tipe yang dikirim berupa JSON
                         success: function (data) { //jika berhasil 
-                            $('#form-tambah-editbr').trigger("reset"); //form reset
-                            $('#edit-modalbr').modal('hide');
-                            $('#tombol-simpanbr').html('Simpan'); //tombol simpan
-                            var oTable = $('#tabelbr').dataTable(); //inialisasi datatable
+                            $('#form-tambah-editpnj').trigger("reset"); //form reset
+                            $('#edit-modalpnj').modal('hide');
+                            $('#tombol-simpanpnj').html('Simpan'); //tombol simpan
+                            var oTable = $('#tabelpnj').dataTable(); //inialisasi datatable
                             oTable.fnDraw(false); //reset datatable
+                            window.location = "/riwayatviewuser";
                             iziToast.success({ //tampilkan iziToast dengan notif data berhasil disimpan pada posisi kiri atas
                                 title: 'Data Berhasil Disimpan',
                                 message: '{{ Session('success ')}}',
@@ -479,70 +410,14 @@ $('#tombol-tambahbr').click(function () {
                         },
                         error: function (data) { //jika error tampilkan error pada console
                             console.log('Error:', data);
-                            $('#tombol-simpanbr').html('Simpan');
+                            $('#tombol-simpanpnj').html('Simpan');
                         }
                     });
                     return false;
                 }
             })
         }
-
-//script tombol-modal-edit
-$('body').on('click', '.edit-post', function () {
-            var data_id = $(this).data('id');
-            $.get('databarang/' + data_id + '/edit', function (data) {
-                $('#modal-judul').html("Edit barang");
-                $('#tombol-simpabr').val("edit-post");
-                $('#edit-modalbr').modal('show');
-                //set value masing-masing id berdasarkan data yg diperoleh dari ajax get request diatas               
-                $('#id_barang').val(data.id_barang);
-                $('#nama_barang').val(data.nama_barang);
-                $('#jumlah').val(data.jumlah);
-                $('#Deskripsi').val(data.Deskripsi);
-            })
-        });
-
-
-
-
-
-
-//Script delete
-
-//jika klik class delete (yang ada pada tombol delete) maka tampilkan modal konfirmasi hapus maka
-$(document).on('click', '.delete', function () {
-            dataId = $(this).attr('id');
-            $('#modalDeletebr').modal('show');
-        });
-        //jika tombol hapus pada modal konfirmasi di klik maka
-        $('#tombol-hapusbr').click(function () {
-            $.ajax({
-
-                url: "databarang/" + dataId, //eksekusi ajax ke url ini
-                type: 'delete',
-                beforeSend: function () {
-                    $('#tombol-hapusbr').text('Hapus Data'); //set text untuk tombol hapus
-                },
-                success: function (data) { //jika sukses
-                    setTimeout(function () {
-                        $('#modalDeletebr').modal('hide'); //sembunyikan konfirmasi modal
-                        var oTable = $('#tabelbr').dataTable();
-                        oTable.fnDraw(false); //reset datatable
-                    });
-                    iziToast.warning({ //tampilkan izitoast warning
-                        title: 'Data Berhasil Dihapus',
-                        message: '{{ Session('
-                        delete ')}}',
-                        position: 'topLeft'
-                    });
-                }
-            })
-        });
-
-
-
-
-
+      
 
 
 
